@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package es.indra.aerolineas;
+
+/**
+ * @author josejarizav
+ *
+ */
+public class Aerolinea {
+	
+	int id;
+	String nombre;
+	Vuelo[] vuelos;
+
+}
