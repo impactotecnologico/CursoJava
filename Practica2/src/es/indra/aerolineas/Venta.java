@@ -36,7 +36,6 @@ public class Venta {
 		p.apellido = "Ariza Valderrama";
 		p.vuelos = vuelosPasajero;
 		
-		
 		System.out.println("*************************************************************************");
 		
 		System.out.println("|\tBienvenidos a aerolineas ".concat(aa.nombre));
@@ -46,15 +45,6 @@ public class Venta {
 		System.out.printf("|\t%s, gracias por confiar en nosotros. Tienes %s vuelos comprados %n", p.nombre,p.vuelos.length );
 		
 		System.out.println("*************************************************************************");
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
