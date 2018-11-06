@@ -1,1 +1,0 @@
-Archivo para enviar al repositorio git.
