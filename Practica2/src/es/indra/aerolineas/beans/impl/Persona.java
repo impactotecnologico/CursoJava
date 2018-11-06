@@ -1,6 +1,6 @@
-package es.indra.aerolineas.beans;
+package es.indra.aerolineas.beans.impl;
 
-public class Persona {
+public abstract class Persona {
 
 	protected String nombre;
 	protected String apellido;
@@ -10,6 +10,8 @@ public class Persona {
 	public Persona() {
 		super();
 	}
+	
+	public abstract String solicitarInformacion();
 	
 	/**
 	 * @return the nombre en mayúsculas que lo necesitan los pasajeros
