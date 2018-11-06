@@ -14,7 +14,8 @@ public class Aerolinea {
 	private String nombre;
 	private Vuelo[] vuelos = new Vuelo[10];
 	
-	public Aerolinea() {		
+	public Aerolinea() {	
+		
 	}
 
 	/**
@@ -84,23 +85,6 @@ public class Aerolinea {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 }

@@ -18,11 +18,13 @@ public class Persona {
 		return nombre.toUpperCase();
 	}
 	
+	
 	/**
 	 * @param nombre the nombre to set
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	
+	
 }

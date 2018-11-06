@@ -67,7 +67,5 @@ public class Pasajero extends Persona {
 	public void setVuelos(Vuelo[] vuelos) {
 		this.vuelos = vuelos;
 	}
-	
-	
 
 }

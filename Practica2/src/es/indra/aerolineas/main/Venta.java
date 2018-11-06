@@ -4,9 +4,9 @@
 package es.indra.aerolineas.main;
 
 import es.indra.aerolineas.beans.Aerolinea;
-import es.indra.aerolineas.beans.Empleado;
 import es.indra.aerolineas.beans.Pasajero;
 import es.indra.aerolineas.beans.Vuelo;
+import es.indra.aerolineas.beans.Empleado;
 
 /**
  * @author josejarizav
@@ -47,14 +47,15 @@ public class Venta {
 		Vuelo[] vuelosPasajero = {vuelos[0], vuelos[4]};
 		
 		p.setId(10);
-		p.setNombre("Jose Julian") ;
-		p.setApellido( "Ariza Valderrama");
+		p.setNombre("jose julian"); 
+		p.setApellido("Lorenzo"); 
 		p.setVuelos(vuelosPasajero);
+		
 		
 		System.out.println("*************************************************************************");
 		
 		System.out.println("|\tBienvenidos a aerolineas ".concat(aa.getNombre()));
-		
+
 		System.out.println("|\tLe atiende: ".concat(emp.getNombre()));
 		
 		System.out.printf("|\tTenemos %s vuelos disponibles%n",aa.getVuelos().length);

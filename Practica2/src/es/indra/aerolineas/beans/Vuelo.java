@@ -18,11 +18,10 @@ public class Vuelo {
 	private boolean disponible;
 	
 	public Vuelo() {
-		
-	}
+			}
 	
 	public Vuelo(int id) {
-		this.id = id;
+		this.id = id;		
 	}
 
 	public Vuelo(int id, String numeroVuelo, String origen, String destino, int numeroPasajeros, boolean disponible) {
@@ -118,6 +117,5 @@ public class Vuelo {
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
-	
 
 }
