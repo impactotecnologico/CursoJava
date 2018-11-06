@@ -6,6 +6,7 @@ package es.indra.aerolineas;
 /**
  * @author josejarizav
  *
+ *
  */
 public class Pasajero {
 	
