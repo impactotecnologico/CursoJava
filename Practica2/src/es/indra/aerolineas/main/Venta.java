@@ -1,7 +1,13 @@
 /**
  * 
  */
-package es.indra.aerolineas;
+package es.indra.aerolineas.main;
+
+import es.indra.aerolineas.beans.Aerolinea;
+import es.indra.aerolineas.beans.Pasajero;
+import es.indra.aerolineas.beans.Vuelo;
+import es.indra.aerolineas.beans.Empleado;
+
 
 /**
  * @author josejarizav
@@ -29,20 +35,37 @@ public class Venta {
 		
 		Pasajero p = new Pasajero();
 		
+		
 		Vuelo[] vuelosPasajero = {vuelos[0], vuelos[4]};
 		
-		p.id = 10;
-		p.nombre = "Jose Julian";
-		p.apellido = "Ariza Valderrama";
-		p.vuelos = vuelosPasajero;
+		aa.consultarVuelos("MAD");
+		aa.consultarVuelos("MAD", "NYC");
+		
+		aa.anularVuelos8();
+		aa.anularVuelos8("AX22");
+		aa.anularVuelos8("SD32", "df33");
+		Empleado emp = new Empleado();
+		
+		
+		emp.setNombre("vendedor1");
+		
+		
+		p.setId(10);
+		p.setNombre("jose julian"); 
+		p.setApellido("Lorenzo"); 
+		p.setVuelos(vuelosPasajero);
+		
 		
 		System.out.println("*************************************************************************");
 		
-		System.out.println("|\tBienvenidos a aerolineas ".concat(aa.nombre));
+		System.out.println("|\tBienvenidos a aerolineas ".concat(aa.getNombre()));
 		
-		System.out.printf("|\tTenemos %s vuelos disponibles%n",aa.vuelos.length);
+		System.out.printf("|\tLe atiende".concat(emp.getNombre()));
+
 		
-		System.out.printf("|\t%s, gracias por confiar en nosotros. Tienes %s vuelos comprados %n", p.nombre,p.vuelos.length );
+		System.out.printf("|\tTenemos %s vuelos disponibles%n",aa.getVuelos().length);
+		
+		System.out.printf("|\t%s, gracias por confiar en nosotros. Tienes %s vuelos comprados %n", p.getNombre(),p.getVuelos().length );
 		
 		System.out.println("*************************************************************************");
 		
