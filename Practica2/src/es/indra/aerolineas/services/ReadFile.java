@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,15 +17,19 @@ import java.util.List;
 public class ReadFile {
 	
 	public List<String> retornarVuelos() {
-		Path path = Paths.get("/Users/josejarizav/repositorios/CursoJava/vuelos.txt");
 		
+		List<String> vuelos = new ArrayList<>();
+		
+		Path path = Paths.get("/Users/josejarizav/repositorios/CursoJava/vuelos.txt");
 		try {
-			return Files.readAllLines(path);			
+			vuelos = Files.readAllLines(path);
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			System.out.println("Finalizada lectura de archivos");
 		}	
 		
-		return null;
+		return vuelos;
 	}
 	
 	public static void main(String[] args) {

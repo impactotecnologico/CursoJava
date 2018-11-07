@@ -87,9 +87,16 @@ public class Aerolinea implements IAerolinea {
 	public void consultarVuelos(String origen) {
 		ReadFile read = new ReadFile();
 		List<String> vuelosEncontrados = read.retornarVuelos();
-		for (String vuelo : vuelosEncontrados) {
-			System.out.println(vuelo);
+		
+		if (vuelosEncontrados != null && !vuelosEncontrados.isEmpty()) {
+			for (String vuelo : vuelosEncontrados) {
+				System.out.println(vuelo);
+			}
+		} else {
+			System.out.println("No se encontraron vuelos");
 		}
+		
+		
 	}
 	
 	/* (non-Javadoc)
