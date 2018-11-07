@@ -3,6 +3,8 @@
  */
 package es.indra.aerolineas.main;
 
+import java.io.IOException;
+
 import es.indra.aerolineas.beans.IAerolinea;
 import es.indra.aerolineas.beans.impl.Aerolinea;
 import es.indra.aerolineas.beans.impl.Empleado;
@@ -33,7 +35,11 @@ public class Venta {
 		
 		IAerolinea aa = new Aerolinea(10, "American Airlines",vuelos);
 		
-		aa.consultarVuelos("MAD");
+		try {
+			aa.consultarVuelos("MAD");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		aa.consultarVuelos("MAD", "NYC");
 		
 		aa.anularVuelos();

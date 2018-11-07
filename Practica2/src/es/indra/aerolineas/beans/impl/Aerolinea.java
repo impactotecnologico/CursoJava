@@ -3,6 +3,7 @@
  */
 package es.indra.aerolineas.beans.impl;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -84,9 +85,9 @@ public class Aerolinea implements IAerolinea {
 	 * @see es.indra.aerolineas.beans.IAerolinea#consultarVuelos(java.lang.String)
 	 */
 	@Override
-	public void consultarVuelos(String origen) {
+	public void consultarVuelos(String origen) throws IOException {
 		ReadFile read = new ReadFile();
-		List<String> vuelosEncontrados = read.retornarVuelos();
+		List<String> vuelosEncontrados = read.retornarVuelosPropagandoError();
 		
 		if (vuelosEncontrados != null && !vuelosEncontrados.isEmpty()) {
 			for (String vuelo : vuelosEncontrados) {

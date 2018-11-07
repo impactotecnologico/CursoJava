@@ -32,6 +32,23 @@ public class ReadFile {
 		return vuelos;
 	}
 	
+	public List<String> retornarVuelosPropagandoError() throws IOException {
+		
+		List<String> vuelos = new ArrayList<>();
+		
+		Path path = Paths.get("/Users/josejarizav/repositorios/CursoJava/vuelos.txt");
+		vuelos = Files.readAllLines(path);
+		
+		
+		return vuelos;
+	}
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		ReadFile r = new ReadFile();
 		r.retornarVuelos();
