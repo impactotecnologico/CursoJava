@@ -10,13 +10,15 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.indra.aerolineas.exceptions.ErrorLecturaDeVuelosException;
+
 /**
  * @author josejarizav
  *
  */
 public class ReadFile {
 	
-	public List<String> retornarVuelos() {
+	public List<String> retornarVuelos() throws ErrorLecturaDeVuelosException {
 		
 		List<String> vuelos = new ArrayList<>();
 		
@@ -24,7 +26,7 @@ public class ReadFile {
 		try {
 			vuelos = Files.readAllLines(path);
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new ErrorLecturaDeVuelosException("Fallo leyendo el archivo", e);
 		} finally {
 			System.out.println("Finalizada lectura de archivos");
 		}	
@@ -41,17 +43,6 @@ public class ReadFile {
 		
 		
 		return vuelos;
-	}
-	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) {
-		ReadFile r = new ReadFile();
-		r.retornarVuelos();
 	}
 
 }
