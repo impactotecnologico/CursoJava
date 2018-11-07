@@ -3,7 +3,11 @@
  */
 package es.indra.aerolineas.beans.impl;
 
+import java.util.Iterator;
+import java.util.List;
+
 import es.indra.aerolineas.beans.IAerolinea;
+import es.indra.aerolineas.services.ReadFile;
 
 /**
  * @author josejarizav
@@ -49,6 +53,7 @@ public class Aerolinea implements IAerolinea {
 	/**
 	 * @return the nombre
 	 */
+	@Override
 	public String getNombre() {
 		return nombre;
 	}
@@ -63,6 +68,7 @@ public class Aerolinea implements IAerolinea {
 	/**
 	 * @return the vuelos
 	 */
+	@Override
 	public Vuelo[] getVuelos() {
 		return vuelos;
 	}
@@ -79,7 +85,11 @@ public class Aerolinea implements IAerolinea {
 	 */
 	@Override
 	public void consultarVuelos(String origen) {
-		System.out.println("Metodo de 1 parametro: ".concat(origen));
+		ReadFile read = new ReadFile();
+		List<String> vuelosEncontrados = read.retornarVuelos();
+		for (String vuelo : vuelosEncontrados) {
+			System.out.println(vuelo);
+		}
 	}
 	
 	/* (non-Javadoc)
