@@ -3,6 +3,8 @@
  */
 package es.indra.aerolineas.beans.impl;
 
+import java.util.List;
+
 /**
  * @author josejarizav
  *
@@ -10,7 +12,7 @@ package es.indra.aerolineas.beans.impl;
  */
 public class Pasajero extends Persona {
 	
-	private Vuelo[] vuelos;
+	private List<Vuelo> vuelos;
 
 	/**
 	 * @return the apellido
@@ -57,14 +59,14 @@ public class Pasajero extends Persona {
 	/**
 	 * @return the vuelos
 	 */
-	public Vuelo[] getVuelos() {
+	public List<Vuelo> getVuelos() {
 		return vuelos;
 	}
 
 	/**
 	 * @param vuelos the vuelos to set
 	 */
-	public void setVuelos(Vuelo[] vuelos) {
+	public void setVuelos(List<Vuelo> vuelos) {
 		this.vuelos = vuelos;
 	}
 
@@ -72,5 +74,15 @@ public class Pasajero extends Persona {
 	public String solicitarInformacion() {
 		return "";
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Pasajero [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + "]";
+	}
+	
+	
 
 }

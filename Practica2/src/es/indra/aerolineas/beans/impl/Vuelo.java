@@ -118,4 +118,14 @@ public class Vuelo {
 		this.disponible = disponible;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Vuelo [numeroVuelo=" + numeroVuelo + ", origen=" + origen + ", destino=" + destino + "]";
+	}
+	
+	
+
 }

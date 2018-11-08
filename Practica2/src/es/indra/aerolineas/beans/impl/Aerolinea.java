@@ -3,10 +3,9 @@
  */
 package es.indra.aerolineas.beans.impl;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import es.indra.aerolineas.beans.IAerolinea;
 import es.indra.aerolineas.exceptions.ErrorLecturaDeVuelosException;
@@ -21,7 +20,10 @@ public class Aerolinea implements IAerolinea {
 	
 	private int id;
 	private String nombre;
-	private Vuelo[] vuelos = new Vuelo[10];
+	private List<Vuelo> vuelos = new ArrayList<>();
+	private Map<String, List<Billete>> billetes;
+	
+	
 	
 	public Aerolinea() {	
 		
@@ -32,7 +34,7 @@ public class Aerolinea implements IAerolinea {
 	 * @param nombre
 	 * @param vuelos
 	 */
-	public Aerolinea(int id, String nombre, Vuelo[] vuelos) {
+	public Aerolinea(int id, String nombre, List<Vuelo> vuelos) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -72,15 +74,29 @@ public class Aerolinea implements IAerolinea {
 	 * @return the vuelos
 	 */
 	@Override
-	public Vuelo[] getVuelos() {
+	public List<Vuelo> getVuelos() {
 		return vuelos;
 	}
 
 	/**
 	 * @param vuelos the vuelos to set
 	 */
-	public void setVuelos(Vuelo[] vuelos) {
+	public void setVuelos(List<Vuelo> vuelos) {
 		this.vuelos = vuelos;
+	}
+
+	/**
+	 * @return the billetes
+	 */
+	public Map<String, List<Billete>> getBilletes() {
+		return billetes;
+	}
+
+	/**
+	 * @param billetes the billetes to set
+	 */
+	public void setBilletes(Map<String, List<Billete>> billetes) {
+		this.billetes = billetes;
 	}
 
 	/* (non-Javadoc)
@@ -120,7 +136,38 @@ public class Aerolinea implements IAerolinea {
 	public void anularVuelos(String... vuelos ) {
 		System.out.println("Numero de vuelos a anular: " + vuelos.length);
 	}
-	
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Aerolinea [nombre=" + nombre + "]";
+	}
+
+	@Override
+	public void verBilletesPorFecha(String fechaBillete) {
+		
+		List<Billete> billetePorDia = this.billetes.get(fechaBillete);
+		for (Billete b : billetePorDia) {
+			System.out.println("\t" + b);
+		}
+		
+		
+		/*
+		
+		// RECORRIDO COMPLETO
+		for (Map.Entry<String, List<Billete>> billete : this.billetes.entrySet()) {
+			System.out.println("Billetes para el día ".concat(billete.getKey()));
+			for (Billete b : billete.getValue()) {
+				System.out.println("\t" + b);
+			}
+			System.out.println("________________________________________________________________________________________");
+			
+		}
+
+		*/
+	}
 	
 
 
