@@ -148,10 +148,15 @@ public class Aerolinea implements IAerolinea {
 	@Override
 	public void verBilletesPorFecha(String fechaBillete) {
 		
+		System.out.println("Billetes para: ".concat(fechaBillete));
+		
 		List<Billete> billetePorDia = this.billetes.get(fechaBillete);
-		for (Billete b : billetePorDia) {
-			System.out.println("\t" + b);
+		if (billetePorDia != null && !billetePorDia.isEmpty()) {
+			for (Billete b : billetePorDia) {
+				System.out.println("\t" + b);
+			}
 		}
+		
 		
 		
 		/*

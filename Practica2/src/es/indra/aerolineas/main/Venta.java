@@ -97,7 +97,7 @@ public class Venta {
 		
 		aa.setBilletes(billetesEmitidos);
 		
-		aa.verBilletesPorFecha("08/11/2018");
+		aa.verBilletesPorFecha("09/11/2018");
 		
 		System.out.println("*************************************************************************");
 		
