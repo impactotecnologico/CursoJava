@@ -30,7 +30,7 @@ public class Limite<T> {
 		Limite<String> limString = new Limite<>();
 		limString.setT("Hola");
 		System.out.println(limString.getT());
-		limString.revision("Otro String");
+		//limString.revision("Otro String");
 	}
 
 	
