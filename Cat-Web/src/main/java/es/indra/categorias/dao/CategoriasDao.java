@@ -25,8 +25,8 @@ public class CategoriasDao {
 
 		try {
 			PreparedStatement preparedStmt = conn.prepareStatement(query);
-			preparedStmt.setInt(1, 190);
-			preparedStmt.setString(2, "Alimentaciones");
+			preparedStmt.setInt(1, c.getId());
+			preparedStmt.setString(2, c.getNombre());
 
 			preparedStmt.execute();
 
