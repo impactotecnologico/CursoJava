@@ -15,19 +15,18 @@ public class Categoria implements java.io.Serializable {
 	private Integer id;
 	private String nombre;
 
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
+	public Integer getId() {
+		return this.id;
+	}
+
 	public Categoria() {
 	}
 
 	public Categoria(String nombre) {
 		this.nombre = nombre;
-	}
-
-	@Id
-	@GeneratedValue(strategy = IDENTITY)
-
-	@Column(name = "id", unique = true, nullable = false)
-	public Integer getId() {
-		return this.id;
 	}
 
 	public void setId(Integer id) {

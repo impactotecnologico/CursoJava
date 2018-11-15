@@ -53,11 +53,11 @@ public class CategoriaDAO {
 		}
 	}
 
-	public void updateCategoria(Categoria student) {
+	public void updateCategoria(Categoria categoria) {
 		Session session = null;
 		try {
 			session = HibernateConnector.getInstance().getSession();
-			session.saveOrUpdate(student);
+			session.saveOrUpdate(categoria);
 			session.flush();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -66,16 +66,16 @@ public class CategoriaDAO {
 		}
 	}
 
-	public Categoria addCategoria(Categoria student) {
+	public Categoria addCategoria(Categoria categoria) {
 		Session session = null;
 		Transaction transaction = null;
 		try {
 			session = HibernateConnector.getInstance().getSession();
 			System.out.println("session : " + session);
 			transaction = session.beginTransaction();
-			session.save(student);
+			session.save(categoria);
 			transaction.commit();
-			return student;
+			return categoria;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

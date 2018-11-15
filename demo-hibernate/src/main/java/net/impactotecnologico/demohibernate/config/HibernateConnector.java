@@ -10,6 +10,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import net.impactotecnologico.demohibernate.pojo.Categoria;
+
 public class HibernateConnector {
 
 	private static HibernateConnector me;
@@ -19,6 +21,7 @@ public class HibernateConnector {
 	private HibernateConnector() throws HibernateException {
 
 		cfg = new Configuration().configure();
+		cfg.addAnnotatedClass(Categoria.class);
 
 		sessionFactory = cfg.buildSessionFactory();
 	}
