@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import es.indra.demoblog.aspects.annotations.MedidorDeTiempo;
 import es.indra.demoblog.model.Blog;
 import es.indra.demoblog.repository.BlogRepository;
 import es.indra.demoblog.service.BlogService;
@@ -16,6 +17,7 @@ public class BlogServiceImpl implements BlogService {
 	@Autowired
 	BlogRepository blogRepository;
 
+	@MedidorDeTiempo
 	@Override
 	public List<Blog> getAllBlog() {
 		return this.blogRepository.findAll();
@@ -23,6 +25,7 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog getBlogById(int id) {
+
 		Optional<Blog> blogO = this.blogRepository.findById(id);
 		if (blogO.isPresent()) {
 			return blogO.get();
@@ -45,7 +48,7 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog updateBlog(Blog blog) {
-		if (this.blogRepository.findById(blog.getId()).isPresent()) {
+		if (this.getBlogById(blog.getId()) != null) {
 			return this.blogRepository.save(blog);
 		}
 		return null;

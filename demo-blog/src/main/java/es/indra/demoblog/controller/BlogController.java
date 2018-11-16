@@ -59,12 +59,10 @@ public class BlogController {
 
 	@RequestMapping(value = "/blog/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deleteById(@PathVariable("id") int id) {
-		boolean borrado = this.blogService.deleteById(id);
-		if (borrado) {
-			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-
-		} else {
+		if (!this.blogService.deleteById(id)) {
 			return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
+		} else {
+			return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 		}
 	}
 
