@@ -36,7 +36,7 @@ public class CategoriaDAO {
 		Session session = null;
 		try {
 			session = HibernateConnector.getInstance().getSession();
-			Query query = session.createQuery("from Categoria s where s.id = :id");
+			Query query = session.createQuery("from Categoria cat where cat.id = :id");
 			query.setParameter("id", id);
 
 			List queryList = query.list();

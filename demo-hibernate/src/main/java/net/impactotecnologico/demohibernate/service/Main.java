@@ -10,36 +10,37 @@ public class Main {
 	CategoriaDAO categoriaDao = new CategoriaDAO();
 
 	public static void main(String[] args) {
-		Main dbOperations = new Main();
-		Categoria categoriaCreada = dbOperations.creaCategoria();
+		Main mainObj = new Main();
+		Categoria categoriaCreada = mainObj.creaCategoria();
 
-		List<Categoria> categoriaList = dbOperations.getCategoriaList();
+		List<Categoria> categoriaList = mainObj.getCategoriaList();
 		if (categoriaList != null) {
-			for (Categoria student : categoriaList) {
-				System.out.println("Nombre de la categoria : " + student.getNombre());
+			for (Categoria cat : categoriaList) {
+				System.out.println("Nombre de la categoria : " + cat.getNombre());
 			}
 		}
-		dbOperations.updateCategoria(categoriaCreada.getId());
-		Categoria categoriaActualizada = dbOperations.getCategoria(categoriaCreada.getId());
+		mainObj.updateCategoria(categoriaCreada.getId());
+		Categoria categoriaActualizada = mainObj.getCategoria(categoriaCreada.getId());
 		if (categoriaActualizada != null) {
 			System.out.println("Despues de Actualizar : " + categoriaActualizada.getNombre());
 		}
 
-		dbOperations.deleteCategoria(categoriaCreada.getId());
+		mainObj.deleteCategoria(categoriaCreada.getId());
 
 	}
 
 	public Categoria creaCategoria() {
 		Categoria s = new Categoria();
+		s.setId(199);
 		s.setNombre("Panes");
 		categoriaDao.addCategoria(s);
 		return s;
 	}
 
 	public void updateCategoria(Integer id) {
-		Categoria student = categoriaDao.findCategoriaById(id);
-		student.setNombre("Pescados");
-		categoriaDao.updateCategoria(student);
+		Categoria cat = categoriaDao.findCategoriaById(id);
+		cat.setNombre("Pescados");
+		categoriaDao.updateCategoria(cat);
 		System.out.println("Categoria Updated Success");
 	}
 

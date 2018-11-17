@@ -1,6 +1,6 @@
-net/impactotecnologico/mvc/demo/model/Blog.class
 net/impactotecnologico/mvc/demo/config/WebConfig.class
-net/impactotecnologico/mvc/demo/config/RootConfig.class
 net/impactotecnologico/mvc/demo/controller/HolaMundoController.class
-net/impactotecnologico/mvc/demo/config/WebAppInitializer.class
 net/impactotecnologico/mvc/demo/controller/BlogController.class
+net/impactotecnologico/mvc/demo/model/Blog.class
+net/impactotecnologico/mvc/demo/config/RootConfig.class
+net/impactotecnologico/mvc/demo/config/WebAppInitializer.class
